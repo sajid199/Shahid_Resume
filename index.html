@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahid Alam - Professional Electrician Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .section {
+            padding: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+        
+        .work-item, .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .work-item:hover, .education-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .work-period {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .work-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .skill-category h5 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .skill-item i {
+            color: #3498db;
+            margin-right: 10px;
+            width: 16px;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .language-item {
+            background: #3498db;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .objective-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .grade-highlight {
+            background: #27ae60;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 10px;
+            }
+            
+            .header-section {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+            }
+            .header-section {
+                background: white !important;
+                color: #000 !important;
+                border: 2px solid #000;
+            }
+            .profile-photo {
+                background: white !important;
+                color: #000 !important;
+                border: 3px solid #000 !important;
+                box-shadow: none !important;
+            }
+            .name {
+                color: #000 !important;
+                text-shadow: none !important;
+            }
+            .title {
+                color: #333 !important;
+            }
+            .contact-item {
+                color: #000 !important;
+            }
+            .contact-item i {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="profile-photo">
+                <img src="./assets/mypic.jpg" alt="Shahid Alam" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1 class="name">Shahid Alam</h1>
+            <p class="title">Professional Electrician (NSQF Level 5)</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>shahidalam6215@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>9308690114 / 9258005396</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-passport"></i>
+                    <span>PA80600178669324</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>02-Feb-2001</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Objective -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-bullseye"></i> Career Objective
+            </h2>
+            <div class="objective-text">
+                To obtain a challenging position as an Electrician (NSQF Level 5) where I can leverage my comprehensive training, hands-on experience in electrical maintenance, and technical expertise to contribute significantly to organizational growth while continuously enhancing my professional skills in the electrical engineering field.
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i> Professional Experience
+            </h2>
+            
+            <div class="work-item">
+                <div class="company-name">Blue Star Pvt. Ltd., Pune</div>
+                <div class="work-period">2023 – 2024</div>
+                <div class="work-description">
+                    • Performed comprehensive electrical maintenance for commercial HVAC systems and industrial equipment<br>
+                    • Conducted preventive maintenance on electrical panels, motor control centers, and power distribution systems<br>
+                    • Troubleshot and repaired VFDs, PLCs, and automated control systems<br>
+                    • Executed cable termination work for high-voltage installations and maintained electrical safety protocols
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="company-name">RD Minash, Rajasthan</div>
+                <div class="work-period">2022 – 2023</div>
+                <div class="work-description">
+                    • Specialized in industrial electrical maintenance and power plant operations<br>
+                    • Performed routine maintenance on transformers, switchgear, and electrical protection systems<br>
+                    • Conducted electrical installations for mining equipment and heavy machinery<br>
+                    • Maintained electrical instrumentation and control systems for operational efficiency
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="company-name">KEC International, Rajasthan</div>
+                <div class="work-period">2022 – 2023</div>
+                <div class="work-description">
+                    • Worked on transmission line projects and substation electrical maintenance<br>
+                    • Performed installation and maintenance of overhead power lines and underground cables<br>
+                    • Conducted testing and commissioning of electrical equipment and safety systems<br>
+                    • Coordinated with field teams for project execution and quality assurance
+                </div>
+            </div>
+
+            <div class="work-item">
+                <div class="company-name">Shree Electricals and Engineer Pvt. Ltd., Mumbai</div>
+                <div class="work-period">2021 – 2022</div>
+                <div class="work-description">
+                    • Executed residential and commercial electrical installations and maintenance<br>
+                    • Performed house wiring, DB dressing, and electrical panel installations<br>
+                    • Conducted electrical troubleshooting and repair work for various clients<br>
+                    • Maintained electrical systems compliance with safety standards and regulations
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Educational Qualification
+            </h2>
+            
+            <div class="education-item">
+                <div class="company-name">Electrician (NSQF Level 5)</div>
+                <div class="work-period">Aug 2020 – Nov 2022 (2 Years)</div>
+                <div class="work-description">
+                    <strong>Institute:</strong> Hariom Private ITI, Fathapur, Sheohar, Bihar<br>
+                    <strong>Result Date:</strong> 23-Jan-2023<br>
+                    <strong>Total Marks:</strong> 1300 | <strong>Marks Secured:</strong> 1046
+                    <div class="grade-highlight">Grade: PASS (80.5%)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-tools"></i> Technical Skills & Expertise
+            </h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h5><i class="fas fa-bolt"></i> Electrical Installation & Maintenance</h5>
+                    <div class="skill-item"><i class="fas fa-check"></i> House Wiring & Commercial Installations</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> DB Dressing & Panel Installation</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Cable Termination & Jointing</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Electrical Circuit Design & Troubleshooting</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Power Distribution Systems</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h5><i class="fas fa-cog"></i> Equipment Maintenance & Repair</h5>
+                    <div class="skill-item"><i class="fas fa-check"></i> 3-Phase Motors Repairing & Maintenance</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Power Tools Repairing & Servicing</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Transformer Maintenance</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> VFD & PLC Troubleshooting</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Electrical Panel Operation & Control</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h5><i class="fas fa-industry"></i> Industrial & Commercial Systems</h5>
+                    <div class="skill-item"><i class="fas fa-check"></i> HVAC Electrical Systems</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Motor Control Centers (MCC)</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Switchgear Operation & Maintenance</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Electrical Safety & Compliance</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Preventive Maintenance Programs</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h5><i class="fas fa-users"></i> Professional Skills</h5>
+                    <div class="skill-item"><i class="fas fa-check"></i> Field Coordination & Teamwork</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Project Execution & Quality Control</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Technical Documentation</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Safety Protocol Implementation</div>
+                    <div class="skill-item"><i class="fas fa-check"></i> Client Relationship Management</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-language"></i> Languages Known
+            </h2>
+            <div class="languages">
+                <div class="language-item">
+                    <i class="fas fa-comment"></i> Hindi (Native)
+                </div>
+                <div class="language-item">
+                    <i class="fas fa-comment"></i> English (Professional)
+                </div>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-map-marker-alt"></i> Address
+            </h2>
+            <div class="objective-text">
+                <i class="fas fa-home"></i> VILL-WARD NO 07, PANJIARAWA, POST PANJIARAWA, SAGAULI, EAST CHAMPARAN, BIHAR - 845431
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="btn btn-primary btn-lg print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i> Print Resume
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling and interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to work items on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all work items and education items
+            document.querySelectorAll('.work-item, .education-item, .skill-category').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+
+            // Add click effect to contact items
+            document.querySelectorAll('.contact-item').forEach(item => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function() {
+                    const text = this.querySelector('span').textContent;
+                    if (text.includes('@')) {
+                        window.location.href = 'mailto:' + text;
+                    } else if (text.match(/^\d+/)) {
+                        window.location.href = 'tel:' + text.split(' / ')[0];
+                    }
+                });
+            });
+
+            // Add tooltip effect to skills
+            document.querySelectorAll('.skill-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.borderRadius = '5px';
+                    this.style.padding = '5px';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'transparent';
+                    this.style.padding = '0';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
